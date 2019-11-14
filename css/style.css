@@ -1,0 +1,61 @@
+.section-home {
+	margin-bottom: 40px;
+}
+.col-xs-12 {
+    position: relative;
+    min-height: 3px;
+    padding-right: 17px;
+    padding-left: 17px
+}
+
+.section-home__images {
+    display: flex;
+    justify-content: space-between;
+}
+
+.section-home__images img {
+    width: 30%;
+}
+
+.section-register {
+	margin-bottom: 40px;
+}
+
+.section-register__box-title {
+	font-family: 'Lobster', cursive;
+	text-align: center;
+	font-size: 24px;
+	color: orange;
+}
+
+.section-register__info {
+	width: 100%;
+}
+
+.section-register__info-title {
+	font-family: 'Lobster', cursive;
+	font-size: 30px;
+	color: orange;
+}
+
+.section-register__info .form-group {
+	margin: 10px 0;
+}
+.row {
+    margin-right: -15px;
+    margin-left: -15px
+}
+.section-register__info input  {
+	width: 65%;
+	height: 34px;
+	padding: 6px 12px;
+	font-size: 14px;
+	line-height: 1.4;
+	color: #555;
+	background-color: #fff;
+	background-image: none;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+}
+
+

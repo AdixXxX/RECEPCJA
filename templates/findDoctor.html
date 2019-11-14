@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>Przychodnia</title>
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css"/>
+    <link rel="stylesheet" href="../css/main.css"/>
+    <link rel="stylesheet" href="../css/table.css"/>
+    <!--  jQuery v3.0.0-beta1 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.js"></script>
+    <!-- JS Pluging -->
+    <script type='text/javascript' src='https://s3.amazonaws.com/dynatable-docs-assets/js/jquery.dynatable.js'></script>
+    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.6/themes/smoothness/jquery-ui.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="web">
+    <nav class="navigation">
+        <div class="container">
+            <ul class="navigation__list">
+                <li class="navigation__list-item navigation__list-item--home">
+                    <a href="home.html">Strona główna</a>
+                </li>
+                <li class="navigation__list-item">
+                    <a href="findDoctor.html">Znajdź lekarza</a>
+                </li>
+                <li class="navigation__list-item">
+                    <a href="./Log/login.html">Zaloguj się</a>
+                </li>
+                <li class="navigation__list-item">
+                    <a href="./Log/register.html">Rejestracja</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="section-logo">
+        <div class="container">
+            <h1 class="section-logo__title">
+                Przychodnia Privat
+            </h1>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <table id="my-table">
+                        <tbody class="list">
+                        <thead>
+                        <tr>
+                            <th>Zaznacz</th>
+                            <th>Imię</th>
+                            <th>Nazwisko</th>
+                            <th>Data Urodzenia</th>
+                            <th>email</th>
+                            <th>Miasto</th>
+                            <th>Specjalizacja</th>
+                            <th>Krótko o sobie</th>
+                        </tr>
+                        </thead>
+                        <tr>
+                            <td><input name="test" type="radio"></td>
+                            <td>Adam</td>
+                            <td>Tomaszewski</td>
+                            <td>19.01.1993</td>
+                            <td>a.tomasz@o2.pl</td>
+                            <td>Warszawa</td>
+                            <td>Kardiolog</td>
+                            <th>Lekarz z 20 letnim doświadczeniem.</th>
+                        </tr>
+                        <tr>
+                            <td><input name="test" onclick="getRow(this)"  type="radio"></td>
+                            <td>Adrian</td>
+                            <td>Kowalski</td>
+                            <td>03.02.1949</td>
+                            <td>ad.kow@gmail.com</td>
+                            <td>Warszawa</td>
+                            <td>Dentysta</td>
+                            <th>Szybko i z precyzją obsługuję pacjentów</th>
+                        </tr>
+                        <tr>
+                            <td><input name="test" onclick="getRow(this)"  type="radio"></td>
+                            <td>Kamila</td>
+                            <td>Maciejak</td>
+                            <td>19.06.1964</td>
+                            <td>kamila.maciejak@gmail.com</td>
+                            <td>Kraków</td>
+                            <td>Urolog</td>
+                            <th>Pracuję w zawodzie już 15 lat</th>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <a href="doctorDetail.html"><button class="button" style="vertical-align:middle"><span>Szczegóły</span></button></a>
+                    <script>
+         $(document).ready(function()
+         {
+            $('#my-table').dynatable();
+         });
+         </script>
+                </div>
+            </div>
+        </div>
+        <br><br>
+    </section>
+    <section class="section-home">
+        <div class="container">
+            <div class="section-home__images">
+                <img src="../img/medicover_ex.jpg" alt="">
+                <img src="../img/odpornosc_na_plus_2.jpg" alt="">
+                <img src="../img/swiadomy_mezczyzna_270x157.jpg"
+                     alt="">
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="container">
+            <br>
+            <CENTER><h3 class="footer__text">copyright &copy; Adrian Lachowicz 2019</h3></CENTER>
+        </div>
+    </footer>
+</div>
+</body>
+</html>
