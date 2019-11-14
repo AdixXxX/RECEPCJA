@@ -27,21 +27,23 @@
                     <a href="../profile.html">Profil</a>
                 </li>
                 <li style="float:right" class="navigation__list-item">
-                    <a href="../doctors/doctorList.html">Lekarze</a>
+                    <a href="patients/patientList.html">Pacjenci</a>
                 </li>
                 <li style="float:right" class="navigation__list-item">
-                    <a href="../visits/visitList.html">Wizyty</a>
+                    <a href="doctors/doctorList.html">Lekarze</a>
+                </li>
+                <li style="float:right" class="navigation__list-item">
+                    <a href="visits/visitList.html">Wizyty</a>
                 </li>
                 <li class="navigation__list-item">
-                    <a href="../contact.html">Kontakt</a>
+                    <a href="contact.html">Kontakt</a>
                 </li>
                 <li style="float:right" class="navigation__list-item">
-                    <a href="../logout.html">Wyloguj</a>
+                    <a href="logout.html">Wyloguj</a>
                 </li>
             </ul>
         </div>
     </nav>
-
     <section class="section-logo">
         <div class="container">
             <h1 class="section-logo__title">
@@ -49,35 +51,6 @@
             </h1>
         </div>
     </section>
-    <section>
-        <div class="container"><br>
-            <center><h3 class="section-logo__title">
-                <h2><a style="margin:20px 0; color:brown;">Witamy na stronie głównej przychodni</a></h2>
-            </h3></center>
-        </div>
-        <script type="text/javascript">
-            function getRow(n) {
-                var row = n.parentNode.parentNode;
-                var cols = row.getElementsByTagName("td");
-            }
-            function moveToPage(n){
-            var cols = getRow(n);
-                if(cols[1].textContent)
-                {
-
-                    alert('ID: ' + cols[1].textContent);
-                    window.location.href = 'patientEdit.html';
-                }
-            }
-            </script>
-        <br><br>
-    </section>
-    <div id="confirm">
-        <div class="message"></div>
-        <button class="yes">Yes</button>
-        <button class="no">No</button>
-    </div>
-    <br><br>
     <section class="section-home">
         <div class="container">
             <div class="section-home__images">
@@ -85,6 +58,13 @@
                 <img src="../../img/odpornosc_na_plus_2.jpg" alt="">
                 <img src="../../img/swiadomy_mezczyzna_270x157.jpg"
                      alt="">
+            </div>
+        </div>
+    </section>
+    <section class="section-register">
+        <div class="container">
+            <div class="section-register__box">
+                <h3 class="section-register__box-title">Witamy na stronie głównej przychodni privat</h3>
             </div>
         </div>
     </section>
