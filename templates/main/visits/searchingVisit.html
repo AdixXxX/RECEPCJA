@@ -31,10 +31,10 @@
                     <a href="../patients/patientList.html">Pacjenci</a>
                 </li>
                 <li style="float:right" class="navigation__list-item">
-                    <a href="doctorList.html">Lekarze</a>
+                    <a href="../doctors/doctorList.html">Lekarze</a>
                 </li>
                 <li style="float:right" class="navigation__list-item">
-                    <a href="../visits/visitList.html">Wizyty</a>
+                    <a href="visitList.html">Wizyty</a>
                 </li>
                 <li class="navigation__list-item">
                     <a href="../contact.html">Kontakt</a>
@@ -61,38 +61,18 @@
                confirmBox.hide();
             });
             confirmBox.find(".yes").click(function(){
-            window.location.href = 'patientDelete.html';
+            window.location.href = 'visitDelete.html';
             });
             confirmBox.show();
          }
       </script>
     <section>
-        <nav class="navigation">
-            <div class="container">
-                <ul class="navigation__list">
-                    <li class="">
-                        <a class="diff" href="patientAdd.html">Dodaj Pacjenta</a>
-                    </li>
-                    <li>
-                        <a class="diff" onclick = 'functionConfirm("Czy na pewno chcesz usunąć ten rekord?", function yes() {},function no() {});'>Usuń Pacjenta</a>
-                    </li>
-                    <li>
-                        <a class="diff" href="patientDetails.html">Szczegóły Pacjenta</a>
-                    </li>
-                    <li>
-                        <a class="diff" href="patientEdit.html">Edycja Pacjenta</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </section>
-    <section>
         <div class="container"><br>
             <center><h3 class="section-logo__title">
-                <a style="margin: 30px 0;">Lista Pacjentow</a>
+                <a style="margin: 30px 0;">Lista Wolnych Terminów</a>
             </h3></center>
         </div>
-            <script type="text/javascript">
+        <script type="text/javascript">
             function getRow(n) {
                 var row = n.parentNode.parentNode;
                 var cols = row.getElementsByTagName("td");
@@ -115,51 +95,40 @@
                         <thead>
                         <tr>
                             <th>Zaznacz</th>
-                            <th>ID</th>
-                            <th>Imię</th>
-                            <th>Nazwisko</th>
-                            <th>PESEL</th>
-                            <th>Data Urodzenia</th>
-                            <th>email</th>
-                            <th>Adres</th>
+                            <th>Wolny Termin Data i godzina</th>
+                            <th>Imię i Nazwisko Lekarza</th>
+                            <th>Specjalizacja</th>
                             <th>Status</th>
+                            <th>Miasto</th>
                         </tr>
                         </thead>
                         <tr>
                             <td><input name="test" type="radio"></td>
-                            <td>1</td>
-                            <td>Adam</td>
-                            <td>Tomaszewski</td>
-                            <td>93019099289</td>
-                            <td>19.01.1993</td>
-                            <td>a.tomasz@o2.pl</td>
-                            <td>Odkryta 29E/3 Warszawa 02-102</td>
-                            <td>Aktywny</td>
+                            <td>19.01.2020 19:15</td>
+                            <td>Tomasz Tomaszewski</td>
+                            <td>Kardiolog</td>
+                            <td>Wolny</td>
+                            <td>Warszawa</td>
                         </tr>
                         <tr>
-                            <td><input name="test" onclick="getRow(this)"  type="radio"></td>
-                            <td>2</td>
-                            <td>Adrian</td>
-                            <td>Kowalski</td>
-                            <td>49020399382</td>
-                            <td>03.02.1949</td>
-                            <td>ad.kow@gmail.com</td>
-                            <td>Piękna 20 Warszawa 01-020</td>
-                            <td>Nieaktywny</td>
+                            <td><input name="test" type="radio"></td>
+                            <td>19.01.2020 19:45</td>
+                            <td>Grzegorz Długosz</td>
+                            <td>Kardiolog</td>
+                            <td>Wolny</td>
+                            <td>Warszawa</td>
                         </tr>
                         <tr>
-                            <td><input name="test" onclick="getRow(this)"  type="radio"></td>
-                            <td>3</td>
-                            <td>Kamila</td>
-                            <td>Maciejak</td>
-                            <td>64060199382</td>
-                            <td>19.06.1964</td>
-                            <td>kamila.maciejak@gmail.com</td>
-                            <td>Nowogrodzka 4 Warszawa 10-301</td>
-                            <td>Aktywny</td>
+                            <td><input name="test" type="radio"></td>
+                            <td>20.01.2020 20:15</td>
+                            <td>Maciej Morawski</td>
+                            <td>Kardiolog</td>
+                            <td>Wolny</td>
+                            <td>Warszawa</td>
                         </tr>
                         </tbody>
                     </table>
+                    <a href="visitConfirmation.html"><button class="button">Zarezerwuj</button></a>
                     <script>
          $(document).ready(function()
          {

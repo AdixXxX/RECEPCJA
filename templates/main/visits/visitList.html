@@ -1,10 +1,190 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>Przychodnia</title>
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+    <link rel="stylesheet" href="../../../css/style.css"/>
+    <link rel="stylesheet" href="../../../css/main.css"/>
+    <link rel="stylesheet" href="../../../css/table.css"/>
+    <!--  jQuery v3.0.0-beta1 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.js"></script>
+    <!-- JS Pluging -->
+    <script type='text/javascript' src='https://s3.amazonaws.com/dynatable-docs-assets/js/jquery.dynatable.js'></script>
+    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.6/themes/smoothness/jquery-ui.css" rel="stylesheet"/>
+
 </head>
 <body>
+<div class="web">
+    <nav class="navigation">
+        <div class="container">
+            <ul class="navigation__list">
+                <li class="navigation__list-item navigation__list-item--home">
+                    <a href="../main.html">Home</a>
+                </li>
+                <li class="navigation__list-item">
+                    <a href="../profile.html">Profil</a>
+                </li>
+                <li style="float:right" class="navigation__list-item">
+                    <a href="../patients/patientList.html">Pacjenci</a>
+                </li>
+                <li style="float:right" class="navigation__list-item">
+                    <a href="../doctors/doctorList.html">Lekarze</a>
+                </li>
+                <li style="float:right" class="navigation__list-item">
+                    <a href="visitList.html">Wizyty</a>
+                </li>
+                <li class="navigation__list-item">
+                    <a href="../contact.html">Kontakt</a>
+                </li>
+                <li style="float:right" class="navigation__list-item">
+                    <a href="../logout.html">Wyloguj</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
 
+    <section class="section-logo">
+        <div class="container">
+            <h1 class="section-logo__title">
+                Przychodnia Privat
+            </h1>
+        </div>
+    </section>
+    <script>
+         function functionConfirm(msg, myYes, myNo) {
+            var confirmBox = $("#confirm");
+            confirmBox.find(".message").text(msg);
+            confirmBox.find(".no").unbind().click(function() {
+               confirmBox.hide();
+            });
+            confirmBox.find(".yes").click(function(){
+            window.location.href = 'visitDelete.html';
+            });
+            confirmBox.show();
+         }
+      </script>
+    <section>
+        <nav class="navigation">
+            <div class="container">
+                <ul class="navigation__list">
+                    <li class="">
+                        <a class="diff" href="visitAdd.html">Dodaj Wizytę</a>
+                    </li>
+                    <li>
+                        <a class="diff" onclick = 'functionConfirm("Czy na pewno chcesz usunąć ten rekord?", function yes() {},function no() {});'>Usuń Wizytę</a>
+                    </li>
+                    <li>
+                        <a class="diff" href="visitDetail.html">Szczegóły Wizyty</a>
+                    </li>
+                    <li>
+                        <a class="diff" href="visitEdit.html">Edycja Wizyty</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </section>
+    <section>
+        <div class="container"><br>
+            <center><h3 class="section-logo__title">
+                <a style="margin: 30px 0;">Lista Wizyt</a>
+            </h3></center>
+        </div>
+        <script type="text/javascript">
+            function getRow(n) {
+                var row = n.parentNode.parentNode;
+                var cols = row.getElementsByTagName("td");
+            }
+            function moveToPage(n){
+            var cols = getRow(n);
+                if(cols[1].textContent)
+                {
+                    alert('ID: ' + cols[1].textContent);
+                    window.location.href = 'visitEdit.html';
+                }
+            }
+            </script>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <table id="my-table">
+                        <tbody class="list">
+                        <thead>
+                        <tr>
+                            <th>Zaznacz</th>
+                            <th>ID</th>
+                            <th>Pacjent Imie i Nazwisko PESEL</th>
+                            <th>Lekarz Imię i Nazwisko</th>
+                            <th>Specjalizacja</th>
+                            <th>Data i godzina Wizyty</th>
+                            <th>Status</th>
+                        </tr>
+                        </thead>
+                        <tr>
+                            <td><input name="test" type="radio"></td>
+                            <td>1</td>
+                            <td>Adam Adamski 49060799959</td>
+                            <td>Tomasz Tomaszewski</td>
+                            <td>Kardiolog</td>
+                            <td>09.02.2020 19:30</td>
+                            <td>Aktywna</td>
+                        </tr>
+                        <tr>
+                            <td><input name="test" type="radio"></td>
+                            <td>2</td>
+                            <td>Karolina Skoczek 69040937463</td>
+                            <td>Marcin Dojasz</td>
+                            <td>Dentysta</td>
+                            <td>09.01.2020 11:30</td>
+                            <td>Odwołana</td>
+                        </tr>
+                        <tr>
+                            <td><input name="test" type="radio"></td>
+                            <td>3</td>
+                            <td>Alicja Mazurek 96010192857</td>
+                            <td>Krzystof Krawczyk</td>
+                            <td>Dermatolog</td>
+                            <td>01.10.2020 6:30</td>
+                            <td>Aktywna</td>
+                        </tr>
+
+                        </tbody>
+                    </table>
+                    <script>
+         $(document).ready(function()
+         {
+            $('#my-table').dynatable();
+         });
+         </script>
+                </div>
+            </div>
+        </div>
+        <br><br>
+    </section>
+    <div id="confirm">
+        <div class="message"></div>
+        <button class="yes">Yes</button>
+        <button class="no">No</button>
+    </div>
+    <br><br>
+    <section class="section-home">
+        <div class="container">
+            <div class="section-home__images">
+                <img src="../../../img/medicover_ex.jpg" alt="">
+                <img src="../../../img/odpornosc_na_plus_2.jpg" alt="">
+                <img src="../../../img/swiadomy_mezczyzna_270x157.jpg"
+                     alt="">
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="container">
+            <br>
+            <CENTER><h3 class="footer__text">copyright &copy; Adrian Lachowicz 2019</h3></CENTER>
+        </div>
+    </footer>
+</div>
 </body>
 </html>
