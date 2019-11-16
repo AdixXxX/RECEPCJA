@@ -17,6 +17,20 @@
     <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.6/themes/smoothness/jquery-ui.css" rel="stylesheet"/>
 </head>
 <body>
+<script>
+function dateValid(){
+var valueDate = document.getElementById('date').value;
+var newDate = new Date();
+    if(!Date.parse(valueDate)){
+        alert('Proszę o wypełnienie pola Termin');
+    }else if(Date.parse(valueDate) < Date.parse(newDate)){
+     alert('Nie możesz zarezerwować terminu w przeszłości');
+    }
+    else{
+        window.location.href = 'searchingVisit.html';
+    }
+}
+</script>
 <div class="web">
     <nav class="navigation">
         <div class="container">
@@ -28,13 +42,13 @@
                     <a href="../profile.html">Profil</a>
                 </li>
                 <li style="float:right" class="navigation__list-item">
-                    <a href="patientList.html">Pacjenci</a>
+                    <a href="../patients/patientList.html">Pacjenci</a>
                 </li>
                 <li style="float:right" class="navigation__list-item">
                     <a href="../doctors/doctorList.html">Lekarze</a>
                 </li>
                 <li style="float:right" class="navigation__list-item">
-                    <a href="../visits/visitList.html">Wizyty</a>
+                    <a href="visitList.html">Wizyty</a>
                 </li>
                 <li class="navigation__list-item">
                     <a href="../contact.html">Kontakt</a>
@@ -73,15 +87,15 @@
                                     <option value="Dentysta">Dentysta</option>
                                     <option value="Dermatolog">Dermatolog</option>
                                 </select></label><br>
-                            <label><span>Pacjent <span class="required">*</span></span>
+                            <label><span>Doktor <span class="required">*</span></span>
                                 <select name="" style="font: 20px Arial, Helvetica, sans-serif; color: grey;">
                                     <option value="Tomasz Tomaszewski">Tomasz Tomaszewski</option>
                                     <option value="Agata Nirub">Agata Nirub</option>
                                 </select></label><br>
-                            <label><span>Termin<span class="required">*</span></span><input type="datetime-local" name="trip-start" class="input-field"></label><br>
+                            <label><span>Termin<span class="required">*</span></span><input type="datetime-local" name="trip-start" id="date" class="input-field"></label><br>
                         </div>
                     </form>
-                    <a href="searchingVisit.html"><button class="button">Szukaj </button></a>
+                    <button onclick="dateValid()" class="button">Szukaj</button>
                     <a href="visitList.html"><button class="button">Powrót</button></a>
                 </div>
             </center>
