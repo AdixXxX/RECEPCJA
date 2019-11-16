@@ -2,13 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="67636708-b1cf-4d95-be54-219d2ed984cf" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/loginReg.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Log/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Log/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Log/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Log/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/main/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main/contact.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/main/doctors/doctorAdd.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main/doctors/doctorAdd.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/main/doctors/doctorDelete.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main/doctors/doctorDelete.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/main/doctors/doctorDetails.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main/doctors/doctorDetails.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/main/doctors/doctorEdit.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main/doctors/doctorEdit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/main/doctors/doctorList.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main/doctors/doctorList.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/main/logout.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main/logout.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/main/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main/main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/main/patients/patientAdd.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main/patients/patientAdd.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/main/patients/patientDelete.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main/patients/patientDelete.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/main/patients/patientDetails.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main/patients/patientDetails.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/main/patients/patientEdit.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main/patients/patientEdit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/main/patients/patientList.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main/patients/patientList.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/main/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main/profile.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -77,7 +85,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
