@@ -23,8 +23,10 @@ var valueDate = document.getElementById('date').value;
 var newDate = new Date();
     if(!Date.parse(valueDate)){
         alert('Proszę o wypełnienie pola Termin');
+        document.getElementById('date').style.borderColor = "red";
     }else if(Date.parse(valueDate) < Date.parse(newDate)){
-     alert('Nie możesz zarezerwować terminu w przeszłości');
+        alert('Nie możesz zarezerwować terminu w przeszłości');
+        document.getElementById('date').style.borderColor = "red";
     }
     else{
         window.location.href = 'searchingVisit.html';
