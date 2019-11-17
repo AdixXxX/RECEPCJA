@@ -16,6 +16,29 @@
     <script type='text/javascript' src='https://s3.amazonaws.com/dynatable-docs-assets/js/jquery.dynatable.js'></script>
     <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.6/themes/smoothness/jquery-ui.css" rel="stylesheet"/>
 </head>
+<script>
+function Validate()
+{
+errors = [];
+
+var name = document.getElementById('name').value;
+
+if(!name){
+   errors.push("Wpisz Nazwę użytkownika !")
+}
+var pass = document.getElementById('pass').value;
+if(!pass)
+{
+   errors.push("Wpisz hasło !")
+}
+if (errors.length > 0) {
+    alert(errors.join("\n"));
+}
+else{
+    window.location.href = '../main/main.html';
+}
+}
+</script>
 <body>
 <div class="web">
 <nav class="navigation">
@@ -48,10 +71,10 @@
         <div class="login">
             <h2 id="header">Zaloguj się</h2>
             <form id="form">
-                <input type="text" placeholder="Email / Login" maxlength="32"><br />
-                <input type="password" placeholder="Hasło"><br />
-                <a href="../main/main.html"> <input type="button" value="Zaloguj"></form></a>
+                <input type="text" placeholder="Email/ Login" id="name" maxlength="32"><br />
+                <input type="password" placeholder="Hasło" id="pass"><br />
             </form>
+                <input type="button" onclick="Validate()" value="Zaloguj">
         </div>
     </div>
 </section>
