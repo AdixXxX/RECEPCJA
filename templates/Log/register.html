@@ -19,45 +19,58 @@
 <script>
 function Validate()
 {
-errors = [];
+    errors = [];
+    var name = document.getElementById('name').value;
+    var surname = document.getElementById('surname').value;
+    if(!name){
+        errors.push("Podaj Imię Pacjenta !")
+        document.getElementById('name').style.borderColor = "red";
+        }
+    else{
+        document.getElementById('name').style.borderColor = "green";
+        }
+    if(!surname){
+        errors.push("Podaj Nazwisko Pacjenta !")
+        document.getElementById('surname').style.borderColor = "red";
+        }
+    else{
+        document.getElementById('surname').style.borderColor = "green";
+        }
+    var email = document.getElementById('email').value;
 
-var name = document.getElementById('name').value;
-var surname = document.getElementById('surname').value;
-if(!name){
-   errors.push("Podaj Imię Pacjenta !")
-}
-
-if(!surname){
-   errors.push("Podaj Nazwisko Pacjenta !")
-}
-
-var email = document.getElementById('email').value;
-
-if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email))
-    {
+    if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)){
         errors.push("Podałeś niepoprawny email !")
-    }
-
-var phone = document.getElementById('phone-number').value;
-
- if(!/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{3,6}$/.test(phone))
-    {
+        document.getElementById('email').style.borderColor = "red";
+        }
+    else{
+        document.getElementById('email').style.borderColor = "green";
+        }
+    var phone = document.getElementById('phone-number').value;
+    if(!/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{3,6}$/.test(phone)){
         errors.push("Podałeś niepoprawny numer telefonu !")
+        document.getElementById('phone-number').style.borderColor = "red";
     }
+    else{
+        document.getElementById('phone-number').style.borderColor = "green";
+        }
     var pass1 = document.getElementById('password1').value;
     var pass2 = document.getElementById('password2').value;
-
     if (pass1.length < 8) {
         errors.push("Hasło musi mieć co najmniej 8 znaków ! ");
-    }
+        document.getElementById('password1').style.borderColor = "red";
+        }
     if (pass1.search(/[a-z]/i) < 0) {
         errors.push("Hasło musi zawierać co najmniej jedną wielką literę !");
-    }
+        document.getElementById('password1').style.borderColor = "red";
+        }
     if (pass1.search(/[0-9]/) < 0) {
         errors.push("Hasło musi zawierać co najmniej jedną cyfrę !");
+        document.getElementById('password1').style.borderColor = "red";
     }
-    if (pass1 != pass2) {
+    if (pass1 != pass2 || (!pass1 && !pass2)) {
         errors.push("Hasła się różnią !");
+        document.getElementById('password2').style.borderColor = "red";
+        document.getElementById('password1').style.borderColor = "red";
     }
     if (errors.length > 0) {
         alert(errors.join("\n"));
@@ -65,7 +78,7 @@ var phone = document.getElementById('phone-number').value;
     else{
         window.location.href = 'login.html';
     }
-    }
+}
 </script>
 <body>
 <div class="web">
@@ -94,27 +107,36 @@ var phone = document.getElementById('phone-number').value;
             </h1>
         </div>
     </section>
-        <section class="section-register">
-            <div class="container">
-                <center>
+    <section class="section-register">
+        <div class="container">
+            <center>
                 <div class="form-style-2">
-                    <h2 style >Rejestracja</h2>
+                    <h2 style>Rejestracja</h2>
                     <br><br>
                     <form action="" method="post">
-                        <div class ="labelFont">
-                            <label><span>Imię<span class="required">*</span></span><input type="text" id="name" class="input-field"/></label>
-                            <label><span>Nazwisko<span class="required">*</span></span><input type="text" id="surname" class="input-field"/></label>
-                            <label><span>Email<span class="required">*</span></span><input type="text" id="email" class="input-field"/></label>
-                            <label><span>Telefon<span class="required">*</span></span><input type="text" id="phone-number" class="input-field"/></label>
-                            <label><span>Hasło<span class="required">*</span></span><input type="password" id="password1" class="input-field"/></label>
-                            <label><span>Powtórz Hasło<span class="required">*</span></span><input type="password" id="password2" class="input-field"/></label>
+                        <div class="labelFont">
+                            <label><span>Imię<span class="required">*</span></span><input type="text" id="name"
+                                                                                          class="input-field"/></label>
+                            <label><span>Nazwisko<span class="required">*</span></span><input type="text" id="surname"
+                                                                                              class="input-field"/></label>
+                            <label><span>Email<span class="required">*</span></span><input type="text" id="email"
+                                                                                           class="input-field"/></label>
+                            <label><span>Telefon<span class="required">*</span></span><input type="text"
+                                                                                             id="phone-number"
+                                                                                             class="input-field"/></label>
+                            <label><span>Hasło<span class="required">*</span></span><input type="password"
+                                                                                           id="password1"
+                                                                                           class="input-field"/></label>
+                            <label><span>Powtórz Hasło<span class="required">*</span></span><input type="password"
+                                                                                                   id="password2"
+                                                                                                   class="input-field"/></label>
                         </div>
                     </form>
                     <button class="button" onclick="Validate()">Zarejestruj</button>
                 </div>
-                </center>
-            </div>
-        </section>
+            </center>
+        </div>
+    </section>
     <section class="section-home">
         <div class="container">
             <div class="section-home__images">

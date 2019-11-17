@@ -25,11 +25,14 @@ var name = document.getElementById('name').value;
 
 if(!name){
    errors.push("Wpisz Nazwę użytkownika !")
+   document.getElementById('name').style.borderColor = "red";
+
 }
 var pass = document.getElementById('pass').value;
 if(!pass)
 {
    errors.push("Wpisz hasło !")
+   document.getElementById('pass').style.borderColor = "red";
 }
 if (errors.length > 0) {
     alert(errors.join("\n"));
