@@ -16,6 +16,57 @@
     <script type='text/javascript' src='https://s3.amazonaws.com/dynatable-docs-assets/js/jquery.dynatable.js'></script>
     <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.6/themes/smoothness/jquery-ui.css" rel="stylesheet"/>
 </head>
+<script>
+function Validate()
+{
+errors = [];
+
+var name = document.getElementById('name').value;
+var surname = document.getElementById('surname').value;
+if(!name){
+   errors.push("Podaj Imię Pacjenta !")
+}
+
+if(!surname){
+   errors.push("Podaj Nazwisko Pacjenta !")
+}
+
+var email = document.getElementById('email').value;
+
+if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email))
+    {
+        errors.push("Podałeś niepoprawny email !")
+    }
+
+var phone = document.getElementById('phone-number').value;
+
+ if(!/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{3,6}$/.test(phone))
+    {
+        errors.push("Podałeś niepoprawny numer telefonu !")
+    }
+    var pass1 = document.getElementById('password1').value;
+    var pass2 = document.getElementById('password2').value;
+
+    if (pass1.length < 8) {
+        errors.push("Hasło musi mieć co najmniej 8 znaków ! ");
+    }
+    if (pass1.search(/[a-z]/i) < 0) {
+        errors.push("Hasło musi zawierać co najmniej jedną wielką literę !");
+    }
+    if (pass1.search(/[0-9]/) < 0) {
+        errors.push("Hasło musi zawierać co najmniej jedną cyfrę !");
+    }
+    if (pass1 != pass2) {
+        errors.push("Hasła się różnią !");
+    }
+    if (errors.length > 0) {
+        alert(errors.join("\n"));
+    }
+    else{
+        window.location.href = 'login.html';
+    }
+    }
+</script>
 <body>
 <div class="web">
     <nav class="navigation">
@@ -51,15 +102,15 @@
                     <br><br>
                     <form action="" method="post">
                         <div class ="labelFont">
-                            <label><span>Imię<span class="required">*</span></span><input type="text" class="input-field"/></label>
-                            <label><span>Nazwisko<span class="required">*</span></span><input type="text" class="input-field"/></label>
-                            <label><span>Email<span class="required">*</span></span><input type="text" class="input-field"/></label>
-                            <label><span>Telefon<span class="required">*</span></span><input type="text" class="input-field"/></label>
-                            <label><span>Hasło<span class="required">*</span></span><input type="password" class="input-field"/></label>
-                            <label><span>Powtórz Hasło<span class="required">*</span></span><input type="password" class="input-field"/></label>
+                            <label><span>Imię<span class="required">*</span></span><input type="text" id="name" class="input-field"/></label>
+                            <label><span>Nazwisko<span class="required">*</span></span><input type="text" id="surname" class="input-field"/></label>
+                            <label><span>Email<span class="required">*</span></span><input type="text" id="email" class="input-field"/></label>
+                            <label><span>Telefon<span class="required">*</span></span><input type="text" id="phone-number" class="input-field"/></label>
+                            <label><span>Hasło<span class="required">*</span></span><input type="password" id="password1" class="input-field"/></label>
+                            <label><span>Powtórz Hasło<span class="required">*</span></span><input type="password" id="password2" class="input-field"/></label>
                         </div>
                     </form>
-                    <a href="login.html"><button class="button">Zarejestruj</button></a>
+                    <button class="button" onclick="Validate()">Zarejestruj</button>
                 </div>
                 </center>
             </div>
